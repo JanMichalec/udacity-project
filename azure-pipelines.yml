@@ -31,12 +31,12 @@ stages:
   - job: BuildJob
     pool: myAgentPool
     steps:
-    - script: |
-        sudo apt install python3.9-venv
-        python3 -m venv ~/.udacity-project
-        source ~/.udacity-project/bin/activate
-      workingDirectory: $(projectRoot)
-      displayName: 'Activate virtual env'
+    # - script: |
+    #     sudo apt install python3.9-venv
+    #     python3 -m venv ~/.udacity-project
+    #     source ~/.udacity-project/bin/activate
+    #   workingDirectory: $(projectRoot)
+    #   displayName: 'Activate virtual env'
     
     - script: |
         sudo apt-get update
