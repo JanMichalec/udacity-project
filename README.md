@@ -21,6 +21,15 @@ then see the key in
 cat ~/.ssh/id_rsa.pub
 ```
 
+## Configure Azure Pipelines in Azure
+
+## create web app
+
+```
+az webapp up --name mywebapp233899 --resource-group Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"
+
+```
+
 ## Screenshots
 
 ![Passing pipeline](images/passing_pipeline.PNG)
