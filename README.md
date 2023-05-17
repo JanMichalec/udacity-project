@@ -11,6 +11,16 @@ source ~/.udacity-project/bin/activate
 make all
 ```
 
+## Create ssh key
+```
+ssh-keygen -t rsa
+```
+then see the key in
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
 ## Screenshots
 
 ![Passing pipeline](images/passing_pipeline.PNG)
