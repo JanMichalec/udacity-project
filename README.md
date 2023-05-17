@@ -34,7 +34,7 @@ az webapp up --name mywebapp233899 --resource-group Azuredevops --sku B1 --logs 
 ## ssh into agent
 ssh devopsagent@20.56.218.80
 
-
+Dont forget to create a environment for the environment name in azure pipeline
 ## Screenshots
 
 ![Passing pipeline](images/passing_pipeline.PNG)
