@@ -30,6 +30,11 @@ az webapp up --name mywebapp233899 --resource-group Azuredevops --sku B1 --logs 
 
 ```
 
+
+## ssh into agent
+ssh devopsagent@20.56.218.80
+
+
 ## Screenshots
 
 ![Passing pipeline](images/passing_pipeline.PNG)
@@ -38,7 +43,7 @@ az webapp up --name mywebapp233899 --resource-group Azuredevops --sku B1 --logs 
 [![Python application test with Github Actions](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml)
 
 
-
+[![Build Status](https://dev.azure.com/odluser233899/udacity-project/_apis/build/status%2FJanMichalec.udacity-project?branchName=main)](https://dev.azure.com/odluser233899/udacity-project/_build/latest?definitionId=1&branchName=main)
 
 
 
