@@ -10,3 +10,5 @@ source ~/.udacity-project/bin/activate
 ```
 make all
 ```
+
+[![Python application test with Github Actions](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml)
