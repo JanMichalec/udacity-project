@@ -11,4 +11,10 @@ source ~/.udacity-project/bin/activate
 make all
 ```
 
+## Screenshots
+
+![Passing pipeline](images/passing_pipeline.PNG)
+
+
 [![Python application test with Github Actions](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml)
+
