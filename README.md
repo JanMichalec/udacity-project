@@ -1,6 +1,10 @@
 # to be moved
 
-## Activate virtual env
+## Ac
+
+https://github.com/JanMichalec/udacity-project/assets/48119545/52344228-f2a1-45e9-816a-3e99b7a82cd5
+
+tivate virtual env
 ```
 python3 -m venv ~/.udacity-project
 source ~/.udacity-project/bin/activate
