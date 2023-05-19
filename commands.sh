@@ -1,0 +1,1 @@
+az webapp up --name mywebapp233899 --resource-group Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"

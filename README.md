@@ -1,21 +1,23 @@
-# to be moved
+# Overview and demo
 
-## Ac
+This project aims to demonstrate continuous delivery for a machine learning application. The Python based predictive model has been trained to predict housing prices. Below you will find a short demo of the application. 
 
 https://github.com/JanMichalec/udacity-project/assets/48119545/52344228-f2a1-45e9-816a-3e99b7a82cd5
 
-tivate virtual env
-```
-python3 -m venv ~/.udacity-project
-source ~/.udacity-project/bin/activate
-```
+# Project Plan
 
-## Install requirements, run lint and tests
-```
-make all
-```
+* [Trello board](https://trello.com/invite/b/Po40Og78/ATTI5db0c6ad4f07b3ab46a59b2baa0fb27bE81E29DD/udacity-project)
+* [Spreadheet](https://docs.google.com/spreadsheets/d/13SiJp5JTC88B4_A9zdNB-uO08Z41nOn_PK7vmmG2_Dw/edit?usp=sharing)
 
-## Create ssh key
+# Instructions
+
+Descriptive diagram
+
+![Architectural diagram](images/cd-diagram.png)
+
+## CI in the Github repository
+
+For cloning the repository firstly generate ssh key
 ```
 ssh-keygen -t rsa
 ```
@@ -24,81 +26,54 @@ then see the key in
 ```
 cat ~/.ssh/id_rsa.pub
 ```
+Example of succesfull cloning:
 
-## Configure Azure Pipelines in Azure
+![Cloned project](images/project_cloned.PNG)
 
-## create web app
 
+Activate virtual environment, install requirements and run tests
 ```
-az webapp up --name mywebapp233899 --resource-group Azuredevops --sku B1 --logs --runtime "PYTHON:3.9"
-
+python3 -m venv ~/.udacity-project
+source ~/.udacity-project/bin/activate
+make all
 ```
+Unit tests should pass
+
+![Passing tests](images/test_passed.PNG)
 
 
-## ssh into agent
-ssh devopsagent@20.56.218.80
+## CD on Azure
 
-Dont forget to create a environment for the environment name in azure pipeline
-## Screenshots
+Create an Azure Web App by running  `commands.sh`. _Note: you may need to make the script executable by running `chmod +x`._
 
-![Passing pipeline](images/passing_pipeline.PNG)
+Create Azure Service Principal and Azure Pipeline Agent (you will need PAT). 
 
+Create CD pipeline.
 
-[![Python application test with Github Actions](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml)
+![Created pipeline](images/azure_pipeline.PNG)
 
+Make sure that both build and deploy stages are passing.
 
-[![Build Status](https://dev.azure.com/odluser233899/udacity-project/_apis/build/status%2FJanMichalec.udacity-project?branchName=main)](https://dev.azure.com/odluser233899/udacity-project/_build/latest?definitionId=1&branchName=main)
+![Deploy passes](images/deploy_passed.PNG)
 
+## Test Flask app
 
+App is running now on `https://mywebapp233899.azurewebsites.net`.
 
-# Overview
+![Running app](images/sklearn_home.PNG)
 
-<TODO: complete this with an overview of your project>
+Run `make_predict_azure_app.sh` to get predictions.
 
-## Project Plan
-<TODO: Project Plan
+![Predictions](images/succesfull_prediction.PNG)
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+In case something does not work, inspect logs by `az webapp log tail`.
 
-## Instructions
-
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
-* Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* Output of streamed log files from deployed application
-
-> 
+![Logs](images/inspect_logs.PNG)
+![Debug](images/debug.PNG)
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
-
-## Demo 
-
-<TODO: Add link Screencast on YouTube>
+In future it would be handy to write an user friendly interface (UI) for the ML app with simple online documentation about usage and idea behind the predictive model.
 
 
+[![Python application test with Github Actions](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/JanMichalec/udacity-project/actions/workflows/pythonapp.yml)
